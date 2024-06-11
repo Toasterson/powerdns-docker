@@ -31,8 +31,8 @@ jobs:
           echo "LOWERCASE_REPO=${GITHUB_REPOSITORY@L}" >> ${GITHUB_ENV}
     outputs:
       tags: |
-        ghcr.io/${{ ${LOWERCASE_REPO} }}/powerdns:v${{ steps.tag.outputs.bare }}
-        ghcr.io/${{ ${LOWERCASE_REPO} }}/powerdns:v${{ steps.tag.outputs.full }}
+        ghcr.io/${{ env.LOWERCASE_REPO }}/powerdns:v${{ steps.tag.outputs.bare }}
+        ghcr.io/${{ env.LOWERCASE_REPO }}/powerdns:v${{ steps.tag.outputs.full }}
 
   release-image:
     needs: [get-versions]
