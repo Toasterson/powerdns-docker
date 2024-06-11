@@ -32,7 +32,7 @@ jobs:
 
   release-image:
     needs: [get-versions]
-    uses: txqueuelen/.github/.github/workflows/common-docker-releaser.yaml@main
+    uses: Toasterson/txqueuelen-github/.github/workflows/common-docker-releaser.yaml@main
     with:
       tags: ${{ needs.get-versions.outputs.tags }}
       push: ${{ github.ref_name == github.event.repository.default_branch }}
